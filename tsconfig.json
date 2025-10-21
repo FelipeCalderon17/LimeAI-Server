@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./app/src",
+    "baseUrl": "./app/src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@config/*": ["./config/*"],
+      "@gateway/*": ["./domain/gateway/*"],
+      "@model/*": ["./domain/model/*"],
+      "@use-case/*": ["./domain/useCase/*"],
+      "@adapter/*": ["./infrastructure/adapters/*"],
+      "@entry-point/*": ["./infrastructure/entry-points/*"]
+    }
+  },
+  "include": ["app/src/**/*"],
+  "exclude": ["node_modules"]
+}
