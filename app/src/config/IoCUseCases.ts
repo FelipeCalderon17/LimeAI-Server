@@ -1,5 +1,6 @@
 import { NoteRepository } from "@gateway/note/NoteRepository";
 import { PatientRepository } from "@gateway/patient/PatientRepository";
+import { CreateNoteUseCase } from "@use-case/note/CreateNoteUseCase";
 import { GetNoteByIdUseCase } from "@use-case/note/GetNoteByIdUseCase";
 import { GetNotesUseCase } from "@use-case/note/GetNotesUseCase";
 import { GetPatientsUseCase } from "@use-case/patient/GetPatientsUseCase";
@@ -19,4 +20,12 @@ container.register<GetNotesUseCase>("GetNotesUseCase", {
 container.register<GetNoteByIdUseCase>("GetNoteByIdUseCase", {
   useFactory: (c) =>
     new GetNoteByIdUseCase(c.resolve<NoteRepository>("NoteRepository")),
+});
+
+container.register<CreateNoteUseCase>("CreateNoteUseCase", {
+  useFactory: (c) =>
+    new CreateNoteUseCase(
+      c.resolve<NoteRepository>("NoteRepository"),
+      c.resolve<PatientRepository>("PatientRepository")
+    ),
 });

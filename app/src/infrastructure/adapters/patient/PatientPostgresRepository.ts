@@ -22,4 +22,20 @@ export class PatientPostgresRepository implements PatientRepository {
       throw new PatientRepositoryExceptions("Failed to fetch patients.");
     }
   }
+
+  async existsById(id: string): Promise<boolean> {
+    try {
+      const count = await this.prisma.patient.count({
+        where: {
+          id: id,
+        },
+      });
+      return count > 0;
+    } catch (error) {
+      logger.error(`Error checking patient existence by id ${id}: ${error}`);
+      throw new PatientRepositoryExceptions(
+        "Failed to check patient existence."
+      );
+    }
+  }
 }

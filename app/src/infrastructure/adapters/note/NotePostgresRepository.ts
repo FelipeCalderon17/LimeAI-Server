@@ -46,4 +46,26 @@ export class NotePostgresRepository implements NoteRepository {
       throw new NoteRepositoryException("Failed to fetch note.");
     }
   }
+
+  async createNote(note: Note): Promise<Note> {
+    try {
+      const newNoteFromDb = await this.prisma.note.create({
+        data: {
+          id: note.getId(),
+          createdAt: note.getCreatedAt(),
+          patientId: note.getPatientId(),
+          rawInput: note.getRawNote(),
+          processedOutput: note.getProcessedNote(),
+        },
+        include: {
+          patient: true,
+        },
+      });
+
+      return NoteMapper.toDomain(newNoteFromDb);
+    } catch (error) {
+      logger.error(`Error creating note in repository: ${error}`);
+      throw new NoteRepositoryException("Failed to create note.");
+    }
+  }
 }

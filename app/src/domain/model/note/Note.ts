@@ -31,4 +31,14 @@ export class Note {
   public getPatientName(): string {
     return this.patientName ?? "";
   }
+
+  public static create(
+    patientId: string,
+    rawNote: string,
+    processedNote: string
+  ): Note {
+    const id = crypto.randomUUID();
+    const createdAt = new Date();
+    return new Note(id, createdAt, patientId, rawNote, processedNote);
+  }
 }
