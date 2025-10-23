@@ -63,8 +63,6 @@ This is a very important step to connect the application to the database, AWS, a
 
 - Edit `.env` open the newly created `.env` file with a text editor and fill in all the required values.
 
-Y el proyecto deberia ejecutarse correctamente sin problemas.
-
 5. **Start the Database Container.**
 
 Make sure Docker Desktop is running. Then, in your terminal (at the project root), start the PostgreSQL database and Adminer (database viewer) using Docker Compose:
@@ -75,7 +73,7 @@ Make sure Docker Desktop is running. Then, in your terminal (at the project root
 
 You can access the database viewer (Adminer) at http://localhost:8080 to inspect the database. Use the credentials from your DATABASE_URL (server: postgres-db, user: myuser, pass: mypassword, db: aiscribe_db).
 
-6. **Start the Database Container.**
+6. **Start the Database and seed.**
 
 With the database container running, apply the database schema and add initial data:
 
