@@ -13,7 +13,8 @@ export class NoteMapper {
       prismaNote.patientId,
       prismaNote.rawInput,
       prismaNote.processedOutput,
-      prismaNote.patient.name
+      prismaNote.patient.name,
+      prismaNote.patient.dateOfBirth
     );
   }
 

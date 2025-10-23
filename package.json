@@ -8,6 +8,14 @@
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "_moduleAliases": {
+    "@config": "dist/config",
+    "@gateway": "dist/domain/gateway",
+    "@model": "dist/domain/model",
+    "@use-case": "dist/domain/useCase",
+    "@adapter": "dist/infrastructure/adapters",
+    "@entry-point": "dist/infrastructure/entry-points"
+  },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
   },
@@ -16,26 +24,39 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.914.0",
     "@prisma/client": "^6.17.1",
+    "@types/multer": "^2.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "loglevel": "^1.9.2",
+    "module-alias": "^2.2.3",
+    "multer": "^2.0.2",
+    "multer-s3": "^3.0.1",
+    "node-fetch": "^2.7.0",
+    "openai": "^6.6.0",
     "prisma": "^6.17.1",
     "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "tsconfig-paths": "^4.2.0",
     "tsyringe": "^4.10.0",
     "winston": "^3.18.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/multer-s3": "^3.0.3",
     "@types/node": "^24.9.0",
+    "@types/node-fetch": "^2.6.13",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3"
   }
 }

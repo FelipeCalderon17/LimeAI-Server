@@ -22,5 +22,17 @@ services:
     depends_on:
       - postgres-db
 
+  api:
+    build: .
+    container_name: ai_scribe_api
+    ports:
+      - "3500:3500"
+    restart: unless-stopped
+    depends_on:
+      - postgres-db
+    env_file:
+      - .env.docker
+    command: sh -c "npx prisma migrate deploy && node dist/server.js"
+
 volumes:
   pgdata:

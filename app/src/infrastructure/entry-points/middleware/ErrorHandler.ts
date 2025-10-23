@@ -23,5 +23,5 @@ export function ErrorHandler(
   }
   res
     .status(HttpStatusCode.INTERNAL_SERVER)
-    .json({ message: "Ocurrió un error inesperado." });
+    .json({ message: "Oops... Something happened, try again." });
 }

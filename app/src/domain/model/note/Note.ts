@@ -4,8 +4,9 @@ export class Note {
     private readonly createdAt: Date,
     private readonly patientId: string,
     private readonly rawNote: string,
-    private readonly processedNote: string,
-    private readonly patientName?: string
+    private readonly processedNote: string | null,
+    private readonly patientName?: string,
+    private readonly patientDateOfBirth?: Date
   ) {}
 
   public getId(): string {
@@ -24,7 +25,7 @@ export class Note {
     return this.rawNote;
   }
 
-  public getProcessedNote(): string {
+  public getProcessedNote(): string | null {
     return this.processedNote;
   }
 
@@ -32,13 +33,34 @@ export class Note {
     return this.patientName ?? "";
   }
 
-  public static create(
+  public getPatientDateOfBirth(): Date {
+    return this.patientDateOfBirth ?? new Date();
+  }
+
+  public static create(patientId: string, rawNote: string): Note {
+    const id = crypto.randomUUID();
+    const createdAt = new Date();
+    return new Note(id, createdAt, patientId, rawNote, null);
+  }
+
+  public static createFromAudio(
     patientId: string,
-    rawNote: string,
-    processedNote: string
+    audioUrl: string,
+    processedContent: string
   ): Note {
     const id = crypto.randomUUID();
     const createdAt = new Date();
-    return new Note(id, createdAt, patientId, rawNote, processedNote);
+    return new Note(id, createdAt, patientId, audioUrl, processedContent);
+  }
+
+  public withProcessedOutput(processedContent: string | null): Note {
+    return new Note(
+      this.id,
+      this.createdAt,
+      this.patientId,
+      this.rawNote,
+      processedContent,
+      this.patientName
+    );
   }
 }

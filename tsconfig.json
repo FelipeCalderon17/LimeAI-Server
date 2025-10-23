@@ -4,7 +4,7 @@
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./app/src",
-    "baseUrl": "./app/src",
+    "baseUrl": "./",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -13,12 +13,12 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "paths": {
-      "@config/*": ["./config/*"],
-      "@gateway/*": ["./domain/gateway/*"],
-      "@model/*": ["./domain/model/*"],
-      "@use-case/*": ["./domain/useCase/*"],
-      "@adapter/*": ["./infrastructure/adapters/*"],
-      "@entry-point/*": ["./infrastructure/entry-points/*"]
+      "@config/*": ["./app/src/config/*"],
+      "@gateway/*": ["./app/src/domain/gateway/*"],
+      "@model/*": ["./app/src/domain/model/*"],
+      "@use-case/*": ["./app/src/domain/useCase/*"],
+      "@adapter/*": ["./app/src/infrastructure/adapters/*"],
+      "@entry-point/*": ["./app/src/infrastructure/entry-points/*"]
     }
   },
   "include": ["app/src/**/*"],

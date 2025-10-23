@@ -8,8 +8,4 @@ export class NotesDTO {
   @IsNotEmpty({ message: "The raw note is mandatory" })
   @IsString({ message: "raw note should be a string" })
   rawNote!: string;
-
-  @IsNotEmpty({ message: "The processed note is mandatory" })
-  @IsString({ message: "processed note should be a string" })
-  processedNote!: string;
 }

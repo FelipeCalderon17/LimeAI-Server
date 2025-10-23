@@ -10,7 +10,7 @@ datasource db {
 model Patient {
   id    String   @id @default(uuid()) 
   name  String
-  dateOfBirth   DateTime @db.Date 
+  dateOfBirth   DateTime @db.Date
   
   notes Note[]
 }
@@ -21,5 +21,5 @@ model Note {
   patient   Patient  @relation(fields: [patientId], references: [id])
   patientId String   
   rawInput  String   
-  processedOutput String
+  processedOutput String?
 }

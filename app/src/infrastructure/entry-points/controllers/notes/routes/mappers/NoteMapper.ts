@@ -3,6 +3,6 @@ import { NotesDTO } from "../dto/NotesDTO";
 
 export const NoteMapper = {
   transformToNote(dto: NotesDTO): Note {
-    return Note.create(dto.patientId, dto.rawNote, dto.processedNote);
+    return Note.create(dto.patientId, dto.rawNote);
   },
 };

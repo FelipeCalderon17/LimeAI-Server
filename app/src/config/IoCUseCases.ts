@@ -1,3 +1,4 @@
+import { AIAdapter } from "@adapter/ai/AIAdapter";
 import { NoteRepository } from "@gateway/note/NoteRepository";
 import { PatientRepository } from "@gateway/patient/PatientRepository";
 import { CreateNoteUseCase } from "@use-case/note/CreateNoteUseCase";
@@ -26,6 +27,7 @@ container.register<CreateNoteUseCase>("CreateNoteUseCase", {
   useFactory: (c) =>
     new CreateNoteUseCase(
       c.resolve<NoteRepository>("NoteRepository"),
-      c.resolve<PatientRepository>("PatientRepository")
+      c.resolve<PatientRepository>("PatientRepository"),
+      c.resolve<AIAdapter>("AIAdapter")
     ),
 });

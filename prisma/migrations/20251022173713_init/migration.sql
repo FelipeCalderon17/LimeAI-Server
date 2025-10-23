@@ -2,7 +2,6 @@
 CREATE TABLE "Patient" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "lastName" TEXT NOT NULL,
     "dateOfBirth" DATE NOT NULL,
 
     CONSTRAINT "Patient_pkey" PRIMARY KEY ("id")
@@ -14,7 +13,7 @@ CREATE TABLE "Note" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "patientId" TEXT NOT NULL,
     "rawInput" TEXT NOT NULL,
-    "processedOutput" TEXT NOT NULL,
+    "processedOutput" TEXT,
 
     CONSTRAINT "Note_pkey" PRIMARY KEY ("id")
 );

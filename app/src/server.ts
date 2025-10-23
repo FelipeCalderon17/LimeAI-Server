@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import "module-alias/register";
 import "@config/IoCUseCases";
 import "@config/IocAdapters";
 import app from "./app";

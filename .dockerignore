@@ -1,0 +1,15 @@
+# Ignora la carpeta de dependencias local
+node_modules
+
+# Ignora la carpeta de compilación local
+dist
+
+# Ignora logs de npm
+npm-debug.log
+
+# Ignora archivos de Git
+.git
+.gitignore
+
+# Ignora variables de entorno
+.env

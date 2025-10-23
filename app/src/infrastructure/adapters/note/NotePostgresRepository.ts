@@ -5,7 +5,6 @@ import { Note } from "@model/note/Note";
 import logger from "@config/Logger";
 import { NoteRepositoryException } from "@gateway/note/errors/NoteRepositoryException";
 import { NoteMapper } from "./mappers/NoteMapper";
-import { NoteNotFound } from "@use-case/note/errors/NoteNotFound";
 
 @injectable()
 export class NotePostgresRepository implements NoteRepository {
