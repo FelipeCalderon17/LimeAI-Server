@@ -8,7 +8,7 @@ Node.js/TypeScript REST API backend for the AI Scribe technical interview projec
 
 </div>
 
-## 📋 <a  name="table">Tabla de contenido</a>
+## 📋 <a  name="table">Content Table</a>
 
 - l.⁠ ⁠[Technologies](#tech-stack)
 - ll.⁠ ⁠[Start the app in local environment](#quick-start)
