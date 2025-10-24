@@ -151,6 +151,12 @@ If you did not made any changes after you build you can start the containers wit
 
 You're all set! The entire system is now online.
 
+To seed the database you have to run the next command in the container:
+
+```bash
+	npm run seed:docker
+```
+
 - API Server: The API is available and listening at http://localhost:3500
 - Database Viewer (Adminer): You can inspect your database by visiting http://localhost:8080
 

@@ -6,7 +6,8 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --exit-child app/src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:docker": "node -r module-alias/register dist/config/scripts/seed.js"
   },
   "_moduleAliases": {
     "@config": "dist/config",
@@ -17,7 +18,7 @@
     "@entry-point": "dist/infrastructure/entry-points"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node app/src/config/scripts/seed.ts"
   },
   "keywords": [],
   "author": "",
